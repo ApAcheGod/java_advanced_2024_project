@@ -4,6 +4,27 @@ server:
 spring:
   application:
     name: root-service
+  cloud:
+    openfeign:
+      circuitbreaker:
+        enabled: true
+      alphanumeric-ids:
+        enabled: true
+
+resilience4j.retry:
+  configs:
+    default:
+      maxAttempts: 10
+      waitDuration: 100ms
+  instances:
+    throwingException:
+      baseConfig: default
+      maxAttempts: 10
+      retryExceptions:
+        - java.lang.IllegalStateException
+        - java.lang.Exception
+        - java.lang.Throwable
+        - feign.FeignException.BadRequest
 
 eureka:
   client:

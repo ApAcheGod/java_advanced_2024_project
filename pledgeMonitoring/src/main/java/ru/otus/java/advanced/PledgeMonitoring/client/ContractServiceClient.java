@@ -1,5 +1,6 @@
 package ru.otus.java.advanced.PledgeMonitoring.client;
 
+import io.github.resilience4j.retry.annotation.Retry;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,5 +13,6 @@ import java.util.UUID;
 public interface ContractServiceClient {
 
     @GetMapping("/api/contract/{id}")
+    @Retry(name = "default")
     ResponseEntity<ContractDto> getContract(@PathVariable("id") UUID id);
 }
