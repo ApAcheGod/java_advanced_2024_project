@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="2024-10-06--dictionary-schema" author="nik.alpatov@mail.ru">
+        <sql>
+            CREATE SCHEMA IF NOT EXISTS dictionary;
+        </sql>
+    </changeSet>
+
+    <changeSet id="2024-10-06--dictionary-table" author="nik.alpatov@mail.ru">
+        <createTable schemaName="dictionary" tableName="DICTIONARY" remarks="Справочники">
+            <column name="ID" type="uuid" remarks="Уникальный идентификатор" defaultValue="gen_random_uuid()">
+                <constraints primaryKey="true" primaryKeyName="PK_DICTIONARY_ID"/>
+            </column>
+            <column name="CATEGORY_ID" type="uuid" remarks="Идентификатор категории"/>
+            <column name="CODE" type="varchar(100)" remarks="Наименование договора"/>
+            <column name="B_CODE" type="varchar(100)" remarks="Наименование договора"/>
+            <column name="NAME" type="varchar(100)" remarks="Наименование договора"/>
+            <column name="DELETED" type="number" defaultValue="0" remarks="Удален"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

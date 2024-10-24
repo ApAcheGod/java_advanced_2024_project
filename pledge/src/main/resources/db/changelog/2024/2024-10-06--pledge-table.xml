@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="2024-10-06--pledge-table" author="nik.alpatov@mail.ru">
+        <createTable tableName="PLEDGE" remarks="Залоги">
+            <column name="ID" type="uuid" remarks="Уникальный идентификатор объекта залога" defaultValue="gen_random_uuid()">
+                <constraints primaryKey="true" primaryKeyName="PK_PLEDGE_ID"/>
+            </column>
+            <column name="NAME" type="varchar(100)" remarks="Наименование объекта залога"/>
+            <column name="CONTRACT_ID" type="uuid" remarks="Уникальный идентификатор договора"/>
+            <column name="PLEDGE_COST" type="number(15,2)" remarks="Залоговая стоимость"/>
+            <column name="PLEDGE_TYPE" type="uuid" remarks="Тип объекта залога"/>
+            <column name="CONTRACT_COST" type="number(15,2)" remarks="Стоимость по договору"/>
+            <column name="ESTIMATED_COST" type="number(15,2)" remarks="Оценочная стоимость"/>
+            <column name="LIQUIDITY_TYPE" type="uuid" remarks="Ликвидность"/>
+            <column name="QUALITY_TYPE" type="uuid" remarks="Категория качества"/>
+            <column name="DELETED" type="boolean" remarks="Удален"/>
+            <column name="CREATED_AT" type="TIMESTAMP WITH TIME ZONE" defaultValue="now()"/>
+            <column name="UPDATED_AT" type="TIMESTAMP WITH TIME ZONE" defaultValue="now()"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

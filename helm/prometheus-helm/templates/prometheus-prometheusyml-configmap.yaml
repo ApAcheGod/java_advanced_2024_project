@@ -1,0 +1,47 @@
+apiVersion: v1
+data:
+  prometheus.yml: |-
+    global:
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      evaluation_interval: 15s
+    scrape_configs:
+      - job_name: "discovery"
+        metrics_path: /actuator/prometheus
+        static_configs:
+          - targets: [ discovery-helm:8080 ]
+      - job_name: "gateway"
+        metrics_path: /actuator/prometheus
+        static_configs:
+          - targets: [ gateway-helm:8080 ]
+      - job_name: "client"
+        metrics_path: /actuator/prometheus
+        static_configs:
+          - targets: [ client-helm:8080 ]
+      - job_name: "contract"
+        metrics_path: /actuator/prometheus
+        static_configs:
+          - targets: [ contract-helm:8080 ]
+      - job_name: "dictionary"
+        metrics_path: /actuator/prometheus
+        static_configs:
+          - targets: [ dictionary-helm:8080 ]
+      - job_name: "pledge"
+        metrics_path: /actuator/prometheus
+        static_configs:
+          - targets: [ pledge-helm:8080 ]
+      - job_name: "root"
+        metrics_path: /actuator/prometheus
+        static_configs:
+          - targets: [ root-helm:8080 ]
+      - job_name: "pledgemonitoring"
+        metrics_path: /actuator/prometheus
+        static_configs:
+          - targets: [ pledgemonitoring-helm:8080 ]
+      - job_name: "task"
+        metrics_path: /actuator/prometheus
+        static_configs:
+          - targets: [ task-helm:8080 ]
+kind: ConfigMap
+metadata:
+  name: prometheus-prometheusyml-configmap

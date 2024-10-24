@@ -1,0 +1,41 @@
+global:
+  scrape_interval: 15s
+  scrape_timeout: 10s
+  evaluation_interval: 15s
+scrape_configs:
+  -   job_name: "discovery"
+      metrics_path: /actuator/prometheus
+      static_configs:
+        - targets: [discovery:8080]
+  -   job_name: "gateway"
+      metrics_path: /actuator/prometheus
+      static_configs:
+        - targets: [gateway:8080]
+  -   job_name: "client"
+      metrics_path: /actuator/prometheus
+      static_configs:
+        - targets: [client:8080]
+  -   job_name: "contract"
+      metrics_path: /actuator/prometheus
+      static_configs:
+        - targets: [contract:8080]
+  -   job_name: "dictionary"
+      metrics_path: /actuator/prometheus
+      static_configs:
+        - targets: [dictionary:8080]
+  -   job_name: "pledge"
+      metrics_path: /actuator/prometheus
+      static_configs:
+        - targets: [pledge:8080]
+  -   job_name: "root"
+      metrics_path: /actuator/prometheus
+      static_configs:
+        - targets: [root:8080]
+  - job_name: "pledgemonitoring"
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: [pledgemonitoring:8080]
+  - job_name: "task"
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: [task:8080]

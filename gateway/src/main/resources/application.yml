@@ -1,0 +1,106 @@
+eureka:
+  client:
+    service-url:
+      defaultZone : http://localhost:8761/eureka/
+server:
+  http2:
+    enabled: true
+  port: 8762
+  ssl:
+    enabled: false
+spring:
+  application:
+    name: gateway
+  main:
+    web-application-type: reactive
+  cloud:
+    gateway:
+      httpserver:
+        wiretap: true
+      httpclient:
+        wiretap: true
+      routes:
+        - id: client-service
+          uri: lb://client-service
+          predicates:
+            - Path=/api/client/**
+        - id: contract-service
+          uri: lb://contract-service
+          predicates:
+            - Path=/api/contract/**
+        - id: pledge-service
+          uri: lb://pledge-service
+          predicates:
+            - Path=/api/pledge/**
+        - id: pledgeMonitoring-service
+          uri: lb://pledgeMonitoring-service
+          predicates:
+            - Path=/api/examinations/**
+        - id: task-service
+          uri: lb://task-service
+          predicates:
+            - Path=/api/task/**
+
+management:
+  server:
+    port: 8088
+  info:
+    os:
+      enabled: true
+    java:
+      enabled: true
+  metrics:
+    enable:
+      tomcat: true
+      jvm: true
+      process: true
+      hikaricp: true
+      system: true
+      jdbc: true
+      logback: true
+    distribution:
+      percentiles:
+        http.server.requests: 0.5, 0.9, 0.95, 0.99, 0.999
+      slo:
+        http.server.requests: 1ms, 10ms, 50ms
+      percentiles-histogram:
+        http.server.requests: true
+  endpoint:
+    loggers:
+      enabled: true
+    metrics:
+      enabled: true
+      distribution:
+        slo:
+          http:
+            server:
+              requests: 1ms, 10ms, 50ms
+        percentiles-histogram:
+          http:
+            server:
+              requests: true
+        percentiles:
+          http:
+            server:
+              requests: 0.5, 0.9, 0.95, 0.99, 0.999
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+         include: '*'
+  tracing:
+    sampling:
+      probability: 1.0
+
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
+springdoc:
+  enable-kotlin: false
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.http.server.reactive: DEBUG
+    org.springframework.web.reactive: DEBUG
+    org.springframework.boot.autoconfigure.web: DEBUG
+    reactor.netty: DEBUG

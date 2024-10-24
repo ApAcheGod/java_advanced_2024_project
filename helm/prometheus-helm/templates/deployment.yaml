@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: prometheus
+  name: prometheus
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prometheus
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: prometheus
+    spec:
+      containers:
+        - image: prom/prometheus
+          name: prometheus
+          ports:
+            - containerPort: 9090
+          resources: {}
+          volumeMounts:
+            - mountPath: /etc/prometheus
+              name: prometheus-prometheusyml-configmap
+      restartPolicy: Always
+      serviceAccountName: spring-cloud-kubernetes
+{{/*      serviceAccountName: ""*/}}
+      volumes:
+        - name: prometheus-prometheusyml-configmap
+          configMap:
+            name: prometheus-prometheusyml-configmap
+  #

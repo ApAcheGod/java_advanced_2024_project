@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="2024-10-06--monitoring-pattern-table" author="nik.alpatov@mail.ru">
+        <createTable tableName="MONITORING_PATTERN" remarks="Таблица паттернов">
+            <column name="ID" type="uuid" remarks="Уникальный идентификатор паттерна" defaultValue="gen_random_uuid()">
+                <constraints primaryKey="true" primaryKeyName="PK_MONITORING_PATTERN_ID"/>
+            </column>
+            <column name="PATTERN" type="text" remarks="Паттерн"/>
+            <column name="PRICE_FIRST_MONITORING_PERIOD" type="number" remarks="Первичная периодичность мониторинга стоимости"/>
+            <column name="PRICE_BASE_MONITORING_PERIOD" type="number" remarks="Периодичность мониторинга стоимости"/>
+            <column name="DOCUMENT_FIRST_MONITORING_PERIOD" type="number" remarks="Первичная периодичность мониторинга документов"/>
+            <column name="DOCUMENT_BASE_MONITORING_PERIOD" type="number" remarks="Периодичность мониторинга документов"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

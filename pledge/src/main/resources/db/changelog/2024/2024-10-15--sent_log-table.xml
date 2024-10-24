@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="2024-10-15--sent_log-table" author="nik.alpatov@mail.ru">
+        <createTable tableName="SENT_LOG" remarks="Журнал отправки запросов">
+            <column name="ID" type="uuid" remarks="Уникальный идентификатор" defaultValue="gen_random_uuid()">
+                <constraints primaryKey="true" primaryKeyName="PK_SENT_LOG_ID"/>
+            </column>
+            <column name="PLEDGE_ID" type="uuid" remarks="Идентификатор объекта залога"/>
+            <column name="STATUS" type="number(3)" remarks="Статус"/>
+            <column name="CREATED_AT" type="TIMESTAMP WITH TIME ZONE" defaultValue="now()"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

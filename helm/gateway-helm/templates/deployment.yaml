@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Chart.Name }}
+  labels:
+    app: {{ .Chart.Name }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app:  {{ .Chart.Name }}
+      release: !!str {{ .Values.image.tag }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Chart.Name }}
+        release: !!str {{ .Values.image.tag }}
+    spec:
+      serviceAccountName: spring-cloud-kubernetes
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: ENVIRONMENT_CONFIG
+              value: |-
+{{ .Files.Get "config/application.yml"  | indent 14 }}
+            - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+              value: http://discovery-service:8080/eureka
+            - name: SERVER_PORT
+              value: "8080"
+            - name: LOKI
+              value: http://loki-svc:3100
+            - name: SPRINGDOC_ENABLE_KOTLIN
+              value: "false"
+          ports:
+            - name: {{ .Values.ports.name }}
+              containerPort: {{ .Values.ports.containerPort }}
+              protocol: {{ .Values.ports.protocol }}
+          resources:
+            requests:
+              cpu: 100m
+              memory: "100Mi"
+            limits:
+              cpu: {{ .Values.resources.limits.cpu }}
+              memory: {{ .Values.resources.limits.memory }}

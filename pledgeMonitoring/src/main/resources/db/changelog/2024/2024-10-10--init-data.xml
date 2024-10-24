@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="2024-10-10--init-data" author="nik.alpatov@mail.ru">
+        <loadData tableName="MONITORING_PATTERN"
+                  file="../data/2024-10-10--monitoring-pattern-data.csv"
+                  relativeToChangelogFile="true"
+                  separator=";"
+                  quotchar="'">
+            <column header="ID" name="ID" type="uuid"/>
+            <column header="PATTERN" name="PATTERN" type="text"/>
+            <column header="PRICE_FIRST_MONITORING_PERIOD" name="PRICE_FIRST_MONITORING_PERIOD" type="number"/>
+            <column header="PRICE_BASE_MONITORING_PERIOD" name="PRICE_BASE_MONITORING_PERIOD" type="number"/>
+            <column header="DOCUMENT_FIRST_MONITORING_PERIOD" name="DOCUMENT_FIRST_MONITORING_PERIOD" type="number"/>
+            <column header="DOCUMENT_BASE_MONITORING_PERIOD" name="DOCUMENT_BASE_MONITORING_PERIOD" type="number"/>
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package ru.otus.advanced.proto;
+
+option java_multiple_files = true;
+
+service DictionaryService {
+  rpc getDictionaryById(DictionaryByIdRequest) returns (DictionaryResponse);
+  rpc getDictionaryByCode(DictionaryByCodeRequest) returns (DictionaryResponse);
+  rpc getDictionaryByCategoryBCode(DictionaryByCategoryBCodeRequest) returns (DictionaryByCategoryBCodeResponse);
+}
+
+
+message DictionaryByIdRequest {
+  string id = 1;
+}
+
+message DictionaryByCodeRequest {
+  string code = 1;
+}
+
+message DictionaryByCategoryBCodeRequest {
+  string bCode = 1;
+}
+
+message DictionaryByCategoryBCodeResponse {
+  repeated DictionaryResponse dictionaryResponse = 1;
+}
+
+
+message DictionaryResponse {
+  string id = 1;
+  string categoryId = 2;
+  string code = 3;
+  string bCode = 4;
+  string name = 5;
+  bool deleted = 6;
+}
+

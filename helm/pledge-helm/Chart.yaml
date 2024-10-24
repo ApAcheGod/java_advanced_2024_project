@@ -1,0 +1,9 @@
+apiVersion: v1
+name: pledge-service
+description: Pledge service
+version: 0.0.2
+appVersion: "1.0.1"
+
+maintainers:
+  - name: Alpatov Nikita
+

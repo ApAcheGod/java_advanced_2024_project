@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="2024-10-10--init-data" author="nik.alpatov@mail.ru">
+        <loadData schemaName="dictionary" tableName="DICTIONARY"
+                  file="../data/2024-10-10--dictionary-data.csv"
+                  relativeToChangelogFile="true"
+                  separator=";"
+                  quotchar="'">
+            <column header="ID" name="ID" type="uuid"/>
+            <column header="CATEGORY_ID" name="CATEGORY_ID" type="uuid"/>
+            <column header="CODE" name="CODE" type="varchar(100)"/>
+            <column header="B_CODE" name="B_CODE" type="varchar(100)"/>
+            <column header="NAME" name="NAME" type="varchar(100)"/>
+            <column header="DELETED" name="DELETED" type="number"/>
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

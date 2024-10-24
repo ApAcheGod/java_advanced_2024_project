@@ -1,0 +1,37 @@
+ID;CATEGORY_ID;CODE;B_CODE;NAME;DELETED
+8436fbd3-da9b-4288-b72b-93a79e7593c5;;Category_Category;Category;Категория справочников;0
+f3b9085f-ea43-4902-9edc-2ec3ed644210;8436fbd3-da9b-4288-b72b-93a79e7593c5;Category_Contract_Type;Contract_Type;Категория типов договора;0
+9e418a78-acc8-4664-8149-77b07a08a0f9;f3b9085f-ea43-4902-9edc-2ec3ed644210;Contract_Type_Pledge;Pledge;Договор залога;0
+c5b6256b-3739-43c5-95fa-605b15cb3ea3;8436fbd3-da9b-4288-b72b-93a79e7593c5;Category_Task_Status;Task_Status;Категория статусов задач;0
+8fe65fc8-b9f1-445b-b74e-3666edc4e239;c5b6256b-3739-43c5-95fa-605b15cb3ea3;Task_Status_New;New;Новая;0
+3f4ff747-31d0-49ce-a688-1c08b769716d;c5b6256b-3739-43c5-95fa-605b15cb3ea3;Task_Status_In_Work;In_Work;В работе;0
+0e5dcce9-b1cf-4707-ac93-e4c745ffab3f;c5b6256b-3739-43c5-95fa-605b15cb3ea3;Task_Status_Closed;Closed;Закрыт;0
+8132da4d-4a68-40c2-bb37-b13d7c6109a3;8436fbd3-da9b-4288-b72b-93a79e7593c5;Category_Examination_Type;Examination_Type;Категория типов проверок;0
+8c3d2590-d281-4cc4-8d88-08cb0fbff880;8132da4d-4a68-40c2-bb37-b13d7c6109a3;Examination_Type_Document;Document;Проверка документов;0
+c9e84e4f-d871-4180-b849-9e97e195748b;8132da4d-4a68-40c2-bb37-b13d7c6109a3;Examination_Type_Price;Price;Проверка стоимости;0
+a4125841-5947-40b0-8d23-739c536f996f;8436fbd3-da9b-4288-b72b-93a79e7593c5;Category_Liquidity_Type;Liquidity_Type;Категория ликвидности;0
+4397fb0c-7bcf-4788-accd-1a0c06848f6d;a4125841-5947-40b0-8d23-739c536f996f;Liquidity_Type_High;High;Высокая;0
+c0241a63-b189-42c5-880e-58ab5f73a08e;a4125841-5947-40b0-8d23-739c536f996f;Liquidity_Type_Medium;Medium;Низкая;0
+828ca94e-6d03-4d12-9ca9-4578118d7e4e;a4125841-5947-40b0-8d23-739c536f996f;Liquidity_Type_Low;Low;Средняя;0
+53a6657a-b5e3-4857-80bc-6bc26571eaae;8436fbd3-da9b-4288-b72b-93a79e7593c5;Category_Quality_Type;Quality_Type;Категория качества;0
+eeb01a6c-0d20-4146-a8db-76dfb86c70d9;53a6657a-b5e3-4857-80bc-6bc26571eaae;Quality_Type_1;Quality_Type_1;1 Категория качества;0
+a6fb1737-d791-49a8-a271-1c223c41a9ec;53a6657a-b5e3-4857-80bc-6bc26571eaae;Quality_Type_2;Quality_Type_2;2 Категория качества;0
+91da8cd1-a4fa-4185-88f4-03db89295479;53a6657a-b5e3-4857-80bc-6bc26571eaae;Quality_Type_3;Quality_Type_3;3 Категория качества;0
+52759867-0be2-41b8-99da-24c99788022f;53a6657a-b5e3-4857-80bc-6bc26571eaae;Quality_Type_4;Quality_Type_4;4 Категория качества;0
+586e64ad-784d-4a15-b400-3c86c778b327;53a6657a-b5e3-4857-80bc-6bc26571eaae;Quality_Type_5;Quality_Type_5;5 Категория качества;0
+57a2e7eb-a661-443b-9db2-09800fd547d1;8436fbd3-da9b-4288-b72b-93a79e7593c5;Category_Guarantee_Kind;Guarantee_Kind;Категория видов обеспечения;0
+4da69747-2a99-4908-81d0-0f0c9a34df42;57a2e7eb-a661-443b-9db2-09800fd547d1;Guarantee_Kind_ПРОЧ;ПРОЧ;Прочее;0
+e8664403-4db3-49ab-abf0-244f24ba32b4;57a2e7eb-a661-443b-9db2-09800fd547d1;Guarantee_Kind_ГПРЮ;ГПРЮ;Гарантии поручительства юридических лиц;0
+d8ccf055-7c4e-4046-94f1-b8dfc3ec2483;57a2e7eb-a661-443b-9db2-09800fd547d1;Guarantee_Kind_ДВИЖ;ДВИЖ;Оборудование и транспорт;0
+a2b8f56c-b558-4180-a035-459a5ecf514e;57a2e7eb-a661-443b-9db2-09800fd547d1;Guarantee_Kind_ЦБДУ;ЦБДУ;Ценные бумаги договоры участия;0
+fde77491-12b1-4212-9d0e-92f1ee299335;57a2e7eb-a661-443b-9db2-09800fd547d1;Guarantee_Kind_НВВВ;НВВВ;Воздушные судна;0
+d403943a-26b3-4180-a8b3-871f199d6a07;57a2e7eb-a661-443b-9db2-09800fd547d1;Guarantee_Kind_ПАЗС;ПАЗС;АЗС;0
+cc5c8a14-84ad-4579-bcb9-8a2ccefcfe5d;57a2e7eb-a661-443b-9db2-09800fd547d1;Guarantee_Kind_ЗППД;ЗППД;Залог прав по договору;0
+1e163bba-5e03-42d4-974d-87cbf2a6cddd;57a2e7eb-a661-443b-9db2-09800fd547d1;Guarantee_Kind_НКОЗ;НКОЗ;Офисные здания;0
+734e9fd1-3445-46f4-b187-4248646ba045;57a2e7eb-a661-443b-9db2-09800fd547d1;Guarantee_Kind_ТТАЛ;ТТАЛ;Алкоголь, табачные изделия;0
+238c9d26-f0b1-4ca3-9ed6-6a1994bf7501;57a2e7eb-a661-443b-9db2-09800fd547d1;Guarantee_Kind_ТПВО;ТПВО;Прочие товары в обороте;0
+0c90028e-0eb3-4b00-8a20-d4fee65276b9;8436fbd3-da9b-4288-b72b-93a79e7593c5;Category_Examination_Status;Examination_Status;Категория статусов работ;0
+1730e0bf-00e9-4052-8fdf-065368eab3c5;0c90028e-0eb3-4b00-8a20-d4fee65276b9;Examination_Status_New;New;Новый;0
+fbc5d256-f4f5-4282-80b2-7cbc99012e51;0c90028e-0eb3-4b00-8a20-d4fee65276b9;Examination_Status_In_Work;In_Word;В работе;0
+810d2cc2-81ae-4c79-a741-5cfe0fe286f4;0c90028e-0eb3-4b00-8a20-d4fee65276b9;Examination_Status_Closed;Closed;Закрыт;0
+b71d76d6-8091-4ba4-9a61-3e43f91f2959;0c90028e-0eb3-4b00-8a20-d4fee65276b9;Examination_Status_Cancelled;Cancelled;Отменен;0
